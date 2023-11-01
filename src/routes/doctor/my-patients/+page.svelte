@@ -7,6 +7,8 @@
 
 	let patients = data.patients || [];
 
+	let loadingMore = false;
+
 	/**
 	 * @param {InputEvent} e
 	 */
@@ -16,6 +18,15 @@
 	}
 
 	const onSearch = debounce(searchCb, 800);
+
+	function loadMore() {
+		loadingMore = true;
+		const t = setTimeout(() => {
+			patients = patients.concat(data.patients);
+			loadingMore = false;
+			clearTimeout(t);
+		}, 1000);
+	}
 </script>
 
 <div>
@@ -27,7 +38,7 @@
 			on:input={onSearch}
 		/>
 	</div>
-	<div class="grid grid-cols-4 gap-6">
+	<div class="grid grid-cols-4 gap-6 mb-10">
 		{#each patients as p}
 			<div class="text-center border rounded p-4">
 				<div class="avatar">
@@ -68,5 +79,14 @@
 				</div>
 			</div>
 		{/each}
+	</div>
+
+	<div class="text-center py-2">
+		<button class="btn btn-sm btn-outline" disabled={loadingMore} on:click={loadMore}>
+			{#if loadingMore}
+				 <span class="loading loading-spinner"></span>
+			{/if}
+			Load More
+		</button>
 	</div>
 </div>
