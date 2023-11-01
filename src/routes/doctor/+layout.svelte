@@ -18,7 +18,10 @@
 		},
 		{
 			name: 'Schedule Timings',
-			icon: 'ion:alarm-outline'
+			icon: 'ion:alarm-outline',
+			redirect: {
+				path: '/doctor/schedule-timings'
+			}
 		},
 		{
 			name: 'Available Timings',

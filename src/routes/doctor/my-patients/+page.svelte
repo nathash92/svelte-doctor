@@ -38,6 +38,7 @@
 			on:input={onSearch}
 		/>
 	</div>
+
 	<div class="grid grid-cols-4 gap-6 mb-10">
 		{#each patients as p}
 			<div class="text-center border rounded p-4">
@@ -70,7 +71,7 @@
 							{p.age}
 						</div>
 					</div>
-					<div class="flex mb-2">
+					<div class="flex">
 						<div class="font-semibold">Blood Group</div>
 						<div class="text-right flex-grow text-gray-500">
 							{p.blood_group}

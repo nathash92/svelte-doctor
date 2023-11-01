@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import 'flatpickr/dist/flatpickr.css';
 
 	import { page } from '$app/stores';
 	import AppBreadcrumb from '$lib/components/app-breadcrumb.svelte';
@@ -11,7 +12,7 @@
 	<link
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-	/>
+	/>	
 </svelte:head>
 
 <div class="navbar bg-base-200 text-base-content sticky top-0 z-10">
