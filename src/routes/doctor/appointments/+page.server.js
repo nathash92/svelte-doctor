@@ -1,5 +1,4 @@
 /** @type {import('./$types').PageServerLoad} */
-
 export async function load() {
   const d = getData();
   return {

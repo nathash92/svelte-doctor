@@ -64,7 +64,9 @@
 	const menusCount = menus.length;
 </script>
 
-<div class="flex py-4">
+<slot />
+
+<div class="flex py-4 hidden">
 	<div class="w-3/12 me-6">
 		<div class="border sticky top-20">
 			<div class="border-b p-3 text-center">
